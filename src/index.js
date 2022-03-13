@@ -66,3 +66,11 @@ app.get('/Help', function (req, res) {
         }
     });
 });
+
+// Server setup
+app.listen(port, function (error) {
+    if (error)
+        throw error;
+    else
+        console.log("Server is running");
+});
