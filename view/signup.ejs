@@ -37,7 +37,7 @@
                                 <a class="nav-link" href="/Signin">Sign In</a>
                             </li>
                             <li class="nav-item active">
-                                <a class="nav-link" href="/Signup">Sign Up<span class="sr-only">(current)</span></a>
+                                <a class="nav-link" href="/Signup">Sign Up <span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="/Help">Help</a>
@@ -64,71 +64,60 @@
                             <div class="card-header">Sing Up</div>
                             <div class="card-body">
                                 <form action="" method="">
-                                    <!-- One "tab" for each step in the form: -->
-                                    <div class="tab">Name:
-                                        <div class="form-group row">
-                                            <label for="full_name"
-                                                class="col-md-4 col-form-label text-md-right">Full Name</label>
-                                            <div class="col-md-6">
-                                                <input type="text" id="full_name" class="form-control"
-                                                    name="full_name" required autofocus>
-                                            </div>
-                                        </div>
-                                    
-
-                                        <div class="form-group row">
-                                            <label for="phone_number"
-                                                class="col-md-4 col-form-label text-md-right">Phone</label>
-                                            <div class="col-md-6">
-                                                <input type="text" id="phone_number" class="form-control" name="phone_number"
-                                                    required>
-                                            </div>
-                                        </div>  
-
-                                        <div class="form-group row">
-                                            <label for="email-address"
-                                                class="col-md-4 col-form-label text-md-right">Email</label>
-                                            <div class="col-md-6">
-                                                <input type="email" id="email" class="form-control" name="email"
-                                                    required>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group row">
-                                            <label for="address"
-                                                class="col-md-4 col-form-label text-md-right">Address</label>
-                                            <div class="col-md-6">
-                                                <input type="address" id="password" class="form-control" name="address"
-                                                    required>
-                                            </div>
+                                    <div class="form-group row">
+                                        <label for="full_name"
+                                            class="col-md-4 col-form-label text-md-right">Full Name</label>
+                                        <div class="col-md-6">
+                                            <input type="text" id="full_name" class="form-control"
+                                                name="full_name" required autofocus>
                                         </div>
                                     </div>
 
-                                    <div class="tab">Login Info:
-                                        <div class="form-group row">
-                                            <label for="email_address"
-                                             class="col-md-4 col-form-label text-md-right">UserName</label>
-                                            <div class="col-md-6">
-                                                <input type="text" id="email_address" class="form-control"
-                                                    name="email-address" required autofocus>
-                                            </div>
+                                    <div class="form-group row">
+                                        <label for="phone_number"
+                                            class="col-md-4 col-form-label text-md-right">Phone</label>
+                                        <div class="col-md-6">
+                                            <input type="text" id="phone_number" class="form-control" name="phone_number"
+                                                required>
                                         </div>
+                                    </div>
 
-                                        <div class="form-group row">
-                                            <label for="password"
+                                    <div class="form-group row">
+                                        <label for="email-address"
+                                            class="col-md-4 col-form-label text-md-right">Email</label>
+                                        <div class="col-md-6">
+                                            <input type="email" id="email" class="form-control" name="email"
+                                                required>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="address"
+                                            class="col-md-4 col-form-label text-md-right">Address</label>
+                                        <div class="col-md-6">
+                                            <input type="address" id="password" class="form-control" name="address"
+                                                required>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="email_address"
+                                            class="col-md-4 col-form-label text-md-right">UserName</label>
+                                        <div class="col-md-6">
+                                            <input type="text" id="email_address" class="form-control"
+                                                name="email-address" required autofocus>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="password"
                                             class="col-md-4 col-form-label text-md-right">Password</label>
-                                            <div class="col-md-6">
-                                                <input type="password" id="password" class="form-control" name="password"
-                                                    required>
-                                            </div>
+                                        <div class="col-md-6">
+                                            <input type="password" id="password" class="form-control" name="password"
+                                                required>
                                         </div>
                                     </div>
-                                    <!-- Circles which indicates the steps of the form: -->
-                                    <div style="text-align:center;margin-top:40px;">
-                                        <span class="step"></span>
-                                        <span class="step"></span>
-                                    </div>
-  
+
                                     <div class="form-group row">
                                         <div class="col-md-6 offset-md-4">
                                             <div class="checkbox">
@@ -138,13 +127,12 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div style="overflow:auto;">
-                                        <div class="offset-md-4">
-                                          <button type="submit" class="btn btn-primary" id="prevBtn" onclick="nextPrev(-1)"> Previous </button>
-                                          <button type="submit" class="btn btn-primary" id="nextBtn" onclick="nextPrev(1)">Next</button>
-                                        </div>
-                                    </div>
 
+                                    <div class="col-md-6 offset-md-4">
+                                        <button type="submit" class="btn btn-primary">
+                                            Sign Up
+                                        </button>
+                                    </div>
                                     <div class= " col-md-6 form-group row text-md-right mt-4 ">
                                         <label for="signup" class =" form-group my-sm-2 text-md-right ">
                                             <label style="width: 7cm; font-size: medium;">Already registered?      
@@ -159,8 +147,6 @@
                 </div>
             </div>
             </div>
-
         </main>
     </body>
-
 </html>
