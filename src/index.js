@@ -46,6 +46,7 @@ app.get("/Signup", function (req, res) {
     }
   });
 });
+
 app.get("/Help", function (req, res) {
   // Render page using renderFile methodsdsdsss
   ejs.renderFile("view/help.ejs", {}, {}, function (err, template) {
