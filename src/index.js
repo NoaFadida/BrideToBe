@@ -7,8 +7,8 @@ const port = 4000;
 app.use(express.static('public'));
 // app.use(express.static(__dirname + '/public'));
 // Render index.ejs file
-app.get('/', function (req, res){
-  // Render page using renderFile methodsdsdsss 
+app.get('/', function (req, res) {
+  // Render page using renderFile methodsdsdsss
   ejs.renderFile('view/home.ejs', {}, {}, function (err, template) {
     if (err) {
       throw err;
@@ -18,14 +18,14 @@ app.get('/', function (req, res){
   });
 });
 
-// Server setup 
-app.listen(port, function(error){
+// Server setup
+app.listen(port, function (error) {
   if (error) throw error;
   else console.log('Server is running');
 });
 
-app.get('/Signin', function(req, res){
-  // Render page using renderFile methodsdsdsss 
+app.get('/Signin', function (req, res) {
+  // Render page using renderFile methodsdsdsss
   ejs.renderFile('view/signin.ejs', {}, {}, function (err, template) {
     if (err) {
       throw err;
@@ -35,7 +35,7 @@ app.get('/Signin', function(req, res){
   });
 });
 
-app.get('/Signup', function(req, res){
+app.get('/Signup', function (req, res) {
   // Render page using renderFile methodsdsdsss
   ejs.renderFile('view/signup.ejs', {}, {}, function (err, template) {
     if (err) {
@@ -46,7 +46,7 @@ app.get('/Signup', function(req, res){
   });
 });
 
-app.get('/Help', function(req, res){
+app.get('/Help', function (req, res) {
   // Render page using renderFile methodsdsdsss
   ejs.renderFile('view/help.ejs', {}, {}, function (err, template) {
     if (err) {
