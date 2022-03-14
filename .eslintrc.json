@@ -11,12 +11,6 @@
         "ecmaVersion": "latest"
     },
     "rules": {
-        "linebreak-style": 0,
-        "space-before-function-paren": ["error", {
-            "anonymous": "never",
-            "named": "never",
-            "asyncArrow": "always"
-        }]
+        "linebreak-style": 0
     }
-   
 }
