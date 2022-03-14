@@ -11,6 +11,8 @@
         "ecmaVersion": "latest"
     },
     "rules": {
-        "linebreak-style": 0
+        "linebreak-style": 0,
+          //disable rule of space before function parentheses 
+        "space-before-function-paren": 0
     }
 }
