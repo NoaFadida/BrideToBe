@@ -2,7 +2,7 @@
 const express = require('express');
 const app = express();
 const ejs = require('ejs');
-const port = 4000;
+const port = 3000;
 
 app.use(express.static('public'));
 // app.use(express.static(__dirname + '/public'));
