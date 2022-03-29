@@ -4,6 +4,7 @@ const app = express();
 const ejs = require('ejs');
 const port = process.env.PORT || 4000;
 
+
 app.use(express.static('public'));
 // app.use(express.static(__dirname + '/public'));
 // Render index.ejs file
@@ -41,6 +42,7 @@ app.get('/Signup', function (req, res) {
     if (err) {
       throw err;
     } else {
+      req.
       res.end(template);
     }
   });
