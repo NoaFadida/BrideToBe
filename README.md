@@ -6,8 +6,8 @@ Project is created with:
 - Node.js 14.16.0
 - Npm
 - Chai,MOCHA
-- Linter , eslint
-- express
+- Linter , Eslint
+- Express
 
 ## Status
-in progress
+In progress
