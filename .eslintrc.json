@@ -12,8 +12,12 @@
     },
     "rules": {
         "linebreak-style": 0,
-          //disable rule of space before function parentheses 
+        //disable rule of space before function parentheses 
         "space-before-function-paren": 0,
-        "quotes": [2, "double"]
+        "quotes": [2,"double"],
+        "no-confusing-arrow": [
+            "error",
+            { "allowParens": true, "onlyOneSimpleParam": false }
+        ]
     }
 }
