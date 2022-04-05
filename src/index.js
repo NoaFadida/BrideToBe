@@ -47,9 +47,9 @@ app.get("/Signup", function (req, res) {
   });
 });
 
-app.get("/Help", function (req, res) {
+app.get("/AboutUs", function (req, res) {
   // Render page using renderFile methodsdsdsss
-  ejs.renderFile("view/help.ejs", {}, {}, function (err, template) {
+  ejs.renderFile("view/about.ejs", {}, {}, function (err, template) {
     if (err) {
       throw err;
     } else {
