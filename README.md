@@ -15,8 +15,8 @@ Project is created with:
 - CircleCi
 - Heroku
 
-##  App Description:
-# BrideToBe 
+##  App Description
+### BrideToBe 
 Our site provides a system to appointments management of a wedding dress studio.
 
 Clients can schedule appointments independently
