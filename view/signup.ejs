@@ -13,8 +13,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 </head>
 
+
 <body>
     <!-- navbar -->
+    
     <div class="notification">BRIDAL COUTURE</div>
     <div class="text-center text-white bg-light">
         <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light">
@@ -47,15 +49,15 @@
                 <div class="col-md-8">
                     <div class="card">
                         <div class="card-header">Sing Up</div>
-                        <div class="card-body">
-                            <form action="" method="">
+                        <div class="card-body" >
+                            <form action="/client-signup" method="POST" class="validated-form" novalidate>
                                 <div class="form-group row">
                                     <label for="full_name" class="col-md-4 col-form-label text-md-right">Full
                                         Name</label>
                                     <div class="col-md-6">
-                                        <input type="text" id="full_name" class="form-control" name="full_name" required
-                                            autofocus />
+                                        <input type="text" id="full_name" class="form-control" name="full_name" required autofocus/>
                                     </div>
+
                                 </div>
 
                                 <div class="form-group row">
@@ -63,7 +65,7 @@
                                         class="col-md-4 col-form-label text-md-right">Phone</label>
                                     <div class="col-md-6">
                                         <input type="text" id="phone_number" class="form-control" name="phone_number"
-                                            required />
+                                            required autofocus />
                                     </div>
                                 </div>
 
@@ -71,7 +73,7 @@
                                     <label for="email-address"
                                         class="col-md-4 col-form-label text-md-right">Email</label>
                                     <div class="col-md-6">
-                                        <input type="email" id="email" class="form-control" name="email" required />
+                                        <input type="email" id="email" class="form-control" name="email" required autofocus />
                                     </div>
                                 </div>
 
@@ -79,7 +81,7 @@
                                     <label for="address" class="col-md-4 col-form-label text-md-right">Address</label>
                                     <div class="col-md-6">
                                         <input type="address" id="password" class="form-control" name="address"
-                                            required />
+                                            required autofocus />
                                     </div>
                                 </div>
 
@@ -87,7 +89,7 @@
                                     <label for="email_address" class="col-md-4 col-form-label text-md-right">UserName
                                     </label>
                                     <div class="col-md-6">
-                                        <input type="text" id="email_address" class="form-control" name="email-address"
+                                        <input type="text" id="username_address" class="form-control" name="username"
                                             required autofocus />
                                     </div>
                                 </div>
@@ -97,7 +99,7 @@
                                     </label>
                                     <div class="col-md-6">
                                         <input type="password" id="password" class="form-control" name="password"
-                                            required />
+                                            required autofocus />
                                     </div>
                                 </div>
 

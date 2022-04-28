@@ -11,6 +11,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Philosopher&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <script>
+        function showAlert(status){
+            if(res.status === 500){
+                console.log("djjjjjjjjjjjjjjdd");
+                console.log( error );
+            }
+        }
+       
+    </script>
 </head>
 
 <body>
@@ -48,13 +58,13 @@
                         <div class="card">
                             <div class="card-header">Sing In</div>
                             <div class="card-body">
-                                <form action="" method="">
+                                <form action="/client-login" method="POST" class="validated-form" novalidate>
                                     <div class="form-group row">
-                                        <label for="email_address"
-                                            class="col-md-4 col-form-label text-md-right">UserName</label>
+                                        <label for="email"
+                                            class="col-md-4 col-form-label text-md-right">Email</label>
                                         <div class="col-md-6">
-                                            <input type="text" id="email_address" class="form-control"
-                                                name="email-address" required autofocus>
+                                            <input type="text" id="email" class="form-control"
+                                                name="email" required >
                                         </div>
                                     </div>
 
@@ -78,7 +88,7 @@
                                     </div>
 
                                     <div class="col-md-6 offset-md-4">
-                                        <button type="submit" class="btn btn3" href="/">
+                                        <button type="submit" class="btn btn3" href="/" onclick=showAlert(status); >
                                             Sign In
                                         </button>
                                     </div>
@@ -90,6 +100,7 @@
                                             </label>
                                         </label>
                                     </div>
+                                </form>
                             </div>
                             </form>
                         </div>
@@ -99,3 +110,4 @@
         </main>
 </body>
 </html>
+
