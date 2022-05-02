@@ -50,56 +50,32 @@
                     <div class="card">
                         <div class="card-header">Sing Up</div>
                         <div class="card-body" >
-                            <form action="/client-signup" method="POST" class="validated-form" novalidate>
+                            <form method="POST" action="/client-signup" novalidate class="validated-form" >
                                 <div class="form-group row">
-                                    <label for="full_name" class="col-md-4 col-form-label text-md-right">Full
-                                        Name</label>
+                                    <label for="full_name" class="col-md-4 col-form-label text-md-right">FullName</label>
                                     <div class="col-md-6">
-                                        <input type="text" id="full_name" class="form-control" name="full_name" required autofocus/>
-                                    </div>
-
-                                </div>
-
-                                <div class="form-group row">
-                                    <label for="phone_number"
-                                        class="col-md-4 col-form-label text-md-right">Phone</label>
-                                    <div class="col-md-6">
-                                        <input type="text" id="phone_number" class="form-control" name="phone_number"
-                                            required autofocus />
+                                        <input type="text" id="full_name" class="form-control" name="full_name" required/>
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="email-address"
-                                        class="col-md-4 col-form-label text-md-right">Email</label>
+                                    <label for="phone_number"class="col-md-4 col-form-label text-md-right">Phone</label>
                                     <div class="col-md-6">
-                                        <input type="email" id="email" class="form-control" name="email" required autofocus />
+                                        <input type="tel"  id="phone_number" class="form-control" name="phone_number" required/>
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="address" class="col-md-4 col-form-label text-md-right">Address</label>
+                                    <label for="email-address"class="col-md-4 col-form-label text-md-right">Email</label>
                                     <div class="col-md-6">
-                                        <input type="address" id="password" class="form-control" name="address"
-                                            required autofocus />
+                                        <input type="email" id="email" class="form-control" name="email" required/>
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="email_address" class="col-md-4 col-form-label text-md-right">UserName
-                                    </label>
+                                    <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
                                     <div class="col-md-6">
-                                        <input type="text" id="username_address" class="form-control" name="username"
-                                            required autofocus />
-                                    </div>
-                                </div>
-
-                                <div class="form-group row">
-                                    <label for="password" class="col-md-4 col-form-label text-md-right">Password
-                                    </label>
-                                    <div class="col-md-6">
-                                        <input type="password" id="password" class="form-control" name="password"
-                                            required autofocus />
+                                        <input type="password" id="password" class="form-control" name="password" required/>
                                     </div>
                                 </div>
 
@@ -114,7 +90,7 @@
                                 </div>
 
                                 <div class="col-md-6 offset-md-4">
-                                    <button type="submit" class="btn btn3">Sign Up</button>
+                                    <button type="submit" class="btn btn3" >Sign Up</button>
                                 </div>
 
                                 <div class="col-md-6 form-group row text-md-right mt-4">
@@ -124,13 +100,31 @@
                                         </label>
                                     </label>
                                 </div>
-
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
+          
         </div>
     </main>
+    <script > 
+        (function () {
+            // 'use strict'
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            const forms = document.querySelectorAll('.validated-form');
+            // Loop over them and prevent submission
+            Array.from(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.stopPropagation()
+                            event.preventDefault()
+                        }
+                        form.classList.add('was-validated')
+                        }, false)
+                })
+        })()
+    </script>
 </body>
 </html>
