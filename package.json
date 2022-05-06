@@ -6,8 +6,7 @@
     "server": "^1.0.37"
   },
   "scripts": {
-    "test": "mocha tests/*spec.js --color",
-    "lint": "eslint /* --color"
+    "test": "mocha tests/*spec.js --color"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.22.0",
