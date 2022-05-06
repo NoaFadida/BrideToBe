@@ -33,7 +33,13 @@ const Navbar = () => {
               <RouterLink url="/register" name="REGISTER" />
             </>
           )}
-          {user && (
+          {user && user?.isAdmin && (
+            <>
+              <RouterLink url="/admin" name="MY WORK" />
+              <a onClick={signoutHandler}>SIGN OUT</a>
+            </>
+          )}
+          {user && user?.isAdmin === false && (
             <>
               <RouterLink url="/personal" name="PERSONAL INFO" />
               <a onClick={signoutHandler}>SIGN OUT</a>

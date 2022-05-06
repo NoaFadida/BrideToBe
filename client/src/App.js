@@ -10,6 +10,8 @@ import RegisterPage from "./pages/RegisterPage";
 import LoginPage from "./pages/LoginPage";
 import PersonalInfo from "./pages/PersonalInfo";
 import GalleryPage from "./pages/GalleryPage";
+import AboutPage from "./pages/AboutPage";
+import AdminPage from "./pages/AdminPage";
 
 function App() {
   return (
@@ -32,6 +34,12 @@ function App() {
         </Route>{" "}
         <Route path="/personal" exact>
           <PersonalInfo />
+        </Route>{" "}
+        <Route path="/about" exact>
+          <AboutPage />
+        </Route>{" "}
+        <Route path="/admin" exact>
+          <AdminPage />
         </Route>{" "}
       </Switch>{" "}
     </Router>

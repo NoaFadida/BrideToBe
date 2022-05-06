@@ -1,17 +1,17 @@
 import React from "react";
 import Announcment from "../components/Announcment/Announcment";
 import Navbar from "../components/Navbar/Navbar";
-import MenuClient from '../components/Menu/MenuClient';
+import MenuAdmin from '../components/Menu/MenuAdmin';
 
-const PersonalInfo = () => {
+const AdminPage = () => {
   return (
     <div>
       <Announcment />
       <Navbar />
-      <MenuClient />
-      {/* <h2>Personal Info HERE</h2> */}
+      <MenuAdmin />
+      {/* <h2>Admin Info HERE</h2> */}
     </div>
   );
 };
 
-export default PersonalInfo;
+export default AdminPage;

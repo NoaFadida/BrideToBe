@@ -2,15 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import MenuList from '@material-ui/core/MenuList';
 import MenuItem from '@material-ui/core/MenuItem';
-import Paper from '@material-ui/core/Paper';
 import { withStyles } from '@material-ui/core/styles';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import History from '@material-ui/icons/CalendarToday';
-import SendIcon from '@material-ui/icons/Email';
+import EditIcon from '@material-ui/icons/Edit';
 import PersonIcon from '@material-ui/icons/Person';
-import NewMeeting from '@material-ui/icons/AddAlarm';
-import CalendarToday from '@material-ui/icons/AccessAlarmsTwoTone';
+import Assessment from '@material-ui/icons/Assessment';
+import EventBusy from '@material-ui/icons/EventBusy';
+import Add from '@material-ui/icons/PostAdd';
 import './Menu.scss';
 
 const styles = theme => ({
@@ -26,36 +26,51 @@ function ListItemComposition(props) {
           <ListItemIcon className={classes.icon}>
             <PersonIcon />
           </ListItemIcon>
-          <ListItemText classes={{ primary: classes.primary }} inset primary="My Details" />
+          <ListItemText classes={{ primary: classes.primary }} inset primary="Edit Profile" />
         </MenuItem>
-        
+{/*         
         <MenuItem className={classes.menuItem}>
           <ListItemIcon className={classes.icon}>
             <NewMeeting />
           </ListItemIcon>
           <ListItemText classes={{ primary: classes.primary }} inset primary="New Meeting" />
-        </MenuItem>
+        </MenuItem> */}
        
         <MenuItem className={classes.menuItem}>
           <ListItemIcon className={classes.icon}>
-            <CalendarToday />
+            <EditIcon />
           </ListItemIcon>
-          <ListItemText classes={{ primary: classes.primary }} inset primary="Future Meetings" />
+          <ListItemText classes={{ primary: classes.primary }} inset primary="Edit Future Meetings" />
         </MenuItem>
         
         <MenuItem className={classes.menuItem}>
           <ListItemIcon className={classes.icon}>
             <History />
           </ListItemIcon>
-          <ListItemText classes={{ primary: classes.primary }} inset primary="Meeting History" />
+          <ListItemText classes={{ primary: classes.primary }} inset primary="View All Meetings" />
         </MenuItem>
         
         <MenuItem className={classes.menuItem}>
           <ListItemIcon className={classes.icon}>
-            <SendIcon />
+            <EventBusy />
           </ListItemIcon>
-          <ListItemText classes={{ primary: classes.primary }} inset primary="Send Email" />
+          <ListItemText classes={{ primary: classes.primary }} inset primary="Add Unaviable Dates" />
         </MenuItem>
+        
+        <MenuItem className={classes.menuItem}>
+          <ListItemIcon className={classes.icon}>
+            <Add />
+          </ListItemIcon>
+          <ListItemText classes={{ primary: classes.primary }} inset primary="Set Types Of Meetings" />
+        </MenuItem>
+        
+        <MenuItem className={classes.menuItem}>
+          <ListItemIcon className={classes.icon}>
+            <Assessment />
+          </ListItemIcon>
+          <ListItemText classes={{ primary: classes.primary }} inset primary="Statistical Information" />
+        </MenuItem>
+        
       </MenuList>
       </div>
   );
