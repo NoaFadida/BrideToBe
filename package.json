@@ -8,5 +8,8 @@
   "scripts": {
     "test": "mocha tests/*spec.js --color",
     "lint": "eslint src/* --color"
+  },
+  "devDependencies": {
+    "eslint": "^8.14.0"
   }
 }
