@@ -10,6 +10,9 @@
     "lint": "eslint src/* --color"
   },
   "devDependencies": {
-    "eslint": "^8.14.0"
+    "@typescript-eslint/eslint-plugin": "^5.22.0",
+    "@typescript-eslint/parser": "^5.22.0",
+    "eslint": "^8.14.0",
+    "eslint-plugin-react": "^7.29.4"
   }
 }
