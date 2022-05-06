@@ -1,0 +1,16 @@
+.announcment-container {
+    height: 40px;
+    width: 100vw;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    & h4 {
+        color: white;
+        font-size: 16px;
+        letter-spacing: 5px;
+        margin: 0;
+        font-weight: 200;
+        font-family: 'Philosopher', sans-serif;
+    }
+}
