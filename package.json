@@ -6,10 +6,6 @@
     "server": "^1.0.37"
   },
   "scripts": {
-    "test": "mocha tests/*spec.js --color",
-    "lint": "eslint /* --color"
-  },
-  "devDependencies": {
-    "eslint": "^8.14.0"
+    "test": "mocha tests/*spec.js --color"
   }
 }
