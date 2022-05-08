@@ -1,0 +1,17 @@
+.new-metting {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    & select {
+        padding: 10px;
+        font-size: 16px;
+        letter-spacing: 2px;
+        border-radius: 10px;
+        cursor: pointer;
+        &:focus {
+            outline: none;
+        }
+        & option {}
+    }
+}

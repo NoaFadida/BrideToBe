@@ -6,11 +6,12 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 // Require Models
 const authRoutes = require("./routes/auth");
+const usersRoutes = require("./routes/users");
 
 dotenv.config();
 app.use(express.json());
 
-//Connect To DB 
+//Connect To DB
 mongoose.connect(
     process.env.MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true },
     () => {
@@ -27,6 +28,7 @@ app.use(
 );
 
 app.use("/api/auth", authRoutes);
+app.use("/api/users", usersRoutes);
 
 const PORT = process.env.PORT || 5000;
 

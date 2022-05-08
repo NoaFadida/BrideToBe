@@ -1,86 +1,105 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import MenuList from '@material-ui/core/MenuList';
-import MenuItem from '@material-ui/core/MenuItem';
-import { withStyles } from '@material-ui/core/styles';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import History from '@material-ui/icons/CalendarToday';
-import SendIcon from '@material-ui/icons/Email';
-import PersonIcon from '@material-ui/icons/Person';
-import NewMeetingIcon from '@material-ui/icons/AddAlarm';
-import CalendarToday from '@material-ui/icons/AccessAlarmsTwoTone';
-import './Menu.scss';
-import Select from "react-dropdown-select"
-import NewMeeting from '../../pages/NewMeeting';
+import React, { useState } from "react";
+import PropTypes from "prop-types";
+import MenuList from "@material-ui/core/MenuList";
+import MenuItem from "@material-ui/core/MenuItem";
+import { withStyles } from "@material-ui/core/styles";
+import ListItemIcon from "@material-ui/core/ListItemIcon";
+import ListItemText from "@material-ui/core/ListItemText";
+import History from "@material-ui/icons/CalendarToday";
+import SendIcon from "@material-ui/icons/Email";
+import PersonIcon from "@material-ui/icons/Person";
+import NewMeetingIcon from "@material-ui/icons/AddAlarm";
+import CalendarToday from "@material-ui/icons/AccessAlarmsTwoTone";
+import "./Menu.scss";
+import NewMeeting from "../NewMetting/NewMeeting";
 
-const styles = theme => ({
-
-});
+const styles = (theme) => ({});
 
 function ListItemComposition(props) {
   const { classes } = props;
 
-  
- 
   const [pageIndex, setPageIndex] = useState(0);
 
   const handleChangeIndex = (index) => {
     setPageIndex(index);
-  }
+  };
 
-  const options = ["My Details",<NewMeeting />, "Future Meetings","Meeting History","Send Email" ];
-    return (
-      <div className='menu-container'>
+  const options = [
+    "My Details",
+    <NewMeeting />,
+    "Future Meetings",
+    "Meeting History",
+    "Send Email",
+  ];
+  return (
+    <div className="menu-container">
       {options[pageIndex]}
       <MenuList>
-      <MenuItem className={classes.menuItem}>
+        <MenuItem className={classes.menuItem}>
           <ListItemIcon className={classes.icon}>
             <PersonIcon />
           </ListItemIcon>
-          <ListItemText classes={{ primary: classes.primary }} inset primary="My Details" />
+          <ListItemText
+            classes={{ primary: classes.primary }}
+            inset
+            primary="My Details"
+          />
         </MenuItem>
-        
-        <MenuItem className={classes.menuItem} onClick={() => handleChangeIndex(1)}>
+
+        <MenuItem
+          className={classes.menuItem}
+          onClick={() => handleChangeIndex(1)}
+        >
           <ListItemIcon className={classes.icon}>
             <NewMeetingIcon />
           </ListItemIcon>
-            <ListItemText
-              classes={{ primary: classes.primary }}
-              inset
-              primary="New Meeting"   
+          <ListItemText
+            classes={{ primary: classes.primary }}
+            inset
+            primary="New Meeting"
           />
         </MenuItem>
-       
+
         <MenuItem className={classes.menuItem}>
           <ListItemIcon className={classes.icon}>
             <CalendarToday />
           </ListItemIcon>
-          <ListItemText classes={{ primary: classes.primary }} inset primary="Future Meetings" />
+          <ListItemText
+            classes={{ primary: classes.primary }}
+            inset
+            primary="Future Meetings"
+          />
         </MenuItem>
-        
+
         <MenuItem className={classes.menuItem}>
           <ListItemIcon className={classes.icon}>
             <History />
           </ListItemIcon>
-          <ListItemText classes={{ primary: classes.primary }} inset primary="Meeting History" />
+          <ListItemText
+            classes={{ primary: classes.primary }}
+            inset
+            primary="Meeting History"
+          />
         </MenuItem>
-        
+
         <MenuItem className={classes.menuItem}>
           <ListItemIcon className={classes.icon}>
             <SendIcon />
           </ListItemIcon>
-          <ListItemText classes={{ primary: classes.primary }} inset primary="Send Email" />
+          <ListItemText
+            classes={{ primary: classes.primary }}
+            inset
+            primary="Send Email"
+          />
         </MenuItem>
       </MenuList>
-    
+      z
     </div>
   );
 }
 
 ListItemComposition.propTypes = {
-    classes: PropTypes.object.isRequired,
-
+  classes: PropTypes.object.isRequired,
 };
 
 export default withStyles(styles)(ListItemComposition);

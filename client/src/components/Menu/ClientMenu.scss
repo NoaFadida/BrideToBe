@@ -1,0 +1,31 @@
+.client-menu {
+    width: 100vw;
+    background-color: aliceblue;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 20px;
+    &-nav {
+        flex: 1;
+        & ul {
+            list-style: none;
+            li {
+                letter-spacing: 1.5px;
+                font-size: 18px;
+                padding: 10px;
+                margin-bottom: 10px;
+                width: fit-content;
+                border-radius: 10px;
+                &:not(:first-child) {
+                    cursor: pointer;
+                    &:hover {
+                        background-color: rgb(182, 200, 217);
+                    }
+                }
+            }
+        }
+    }
+    &-data {
+        flex: 2;
+    }
+}
