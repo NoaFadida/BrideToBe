@@ -1,28 +1,45 @@
-.menu-container{
-    height: 30vw;
-    background-color: #f7f6f6;
-}
-
-.MuiList-root {
-    width:min-content;
-    height: 100%;
-    flex-wrap: wrap;
-    padding: 12px !important;
-    .MuiButtonBase-root {
-        margin-top: 15px ;
-        color: #867a70b0;
-        &:hover{
-            color:black;
+.user-menu {
+    width: 100vw;
+    background-color: rgb(247, 246, 246);
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 20px;
+    &-nav {
+        flex: 1;
+        & ul {
+            list-style: none;
+            font-family: 'Montserrat',sans-serif; 
+            li {
+                letter-spacing: 3px;
+                font-size: 22px;
+                font-weight: 700;
+                font-family: 'Playfair Display',sans-serif; 
+                padding: 10px;
+                margin-bottom: 10px;
+                width: fit-content;
+                border-radius: 10px;
+                color: #4a4036b0;
+                &:not(:first-child) {
+                    letter-spacing: 1.5px;
+                    font-size: 16px;
+                    font-weight: 600;
+                    color: #867a70b0;
+                    font-family: 'Montserrat', sans-serif; 
+                    cursor: pointer;
+                    &:hover {
+                        color: black;
+                    }
+                }
+            }
         }
     }
-    &:hover{
-        color: white;
-    }
-    &:focus {
-        outline: none;
-    }
-    .MuiListItemIcon-root{
-        min-width: 0%;
-        color:#867a70b0 ;
+    &-data {
+        padding-right: 20px;
+        flex: 2;
+        font-family: 'Montserrat', sans-serif;;
+        display: flex;
+        align-items: center;
+        
     }
 }

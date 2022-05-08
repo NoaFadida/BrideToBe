@@ -1,17 +1,31 @@
 .new-metting {
     display: flex;
-    align-items: flex-start;
-    justify-content: center;
+    align-items:center;
+    // justify-content: center;
     flex-direction: column;
+    font-size: 20px;
+    font-family: 'Montserrat',sans-serif; 
+    font-weight: 700;
+    letter-spacing: 2px;
     & select {
         padding: 10px;
-        font-size: 16px;
-        letter-spacing: 2px;
-        border-radius: 10px;
+        margin-bottom: 10px;
+        background-color: black;
+        color: white;
+        border-radius: 8px;
         cursor: pointer;
         &:focus {
             outline: none;
         }
-        & option {}
+        & option {
+            // padding: 10px;
+            background-color: rgb(216, 212, 212) ;
+            color: black;
+            border-radius: 8px;
+        }
+ 
     }
+}
+.react-calendar{
+    background-color: rgb(216, 212, 212) !important;
 }
