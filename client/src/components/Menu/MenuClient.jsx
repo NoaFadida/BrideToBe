@@ -8,11 +8,11 @@ import ListItemText from '@material-ui/core/ListItemText';
 import History from '@material-ui/icons/CalendarToday';
 import SendIcon from '@material-ui/icons/Email';
 import PersonIcon from '@material-ui/icons/Person';
-import NewMeeting from '@material-ui/icons/AddAlarm';
+import NewMeetingIcon from '@material-ui/icons/AddAlarm';
 import CalendarToday from '@material-ui/icons/AccessAlarmsTwoTone';
-import DatePicker from 'react-date-picker';
 import './Menu.scss';
 import Select from "react-dropdown-select"
+import NewMeeting from '../../pages/NewMeeting';
 
 const styles = theme => ({
 
@@ -22,10 +22,17 @@ function ListItemComposition(props) {
   const { classes } = props;
 
   
-  const [date, setDate] = useState(new Date());
-  //const options = ["Option 1", "Option 2"];
+ 
+  const [pageIndex, setPageIndex] = useState(0);
+
+  const handleChangeIndex = (index) => {
+    setPageIndex(index);
+  }
+
+  const options = ["My Details",<NewMeeting />, "Future Meetings","Meeting History","Send Email" ];
     return (
       <div className='menu-container'>
+      {options[pageIndex]}
       <MenuList>
       <MenuItem className={classes.menuItem}>
           <ListItemIcon className={classes.icon}>
@@ -34,11 +41,15 @@ function ListItemComposition(props) {
           <ListItemText classes={{ primary: classes.primary }} inset primary="My Details" />
         </MenuItem>
         
-        <MenuItem className={classes.menuItem}>
+        <MenuItem className={classes.menuItem} onClick={() => handleChangeIndex(1)}>
           <ListItemIcon className={classes.icon}>
-            <NewMeeting />
+            <NewMeetingIcon />
           </ListItemIcon>
-          <ListItemText classes={{ primary: classes.primary }} inset primary="New Meeting" />
+            <ListItemText
+              classes={{ primary: classes.primary }}
+              inset
+              primary="New Meeting"   
+          />
         </MenuItem>
        
         <MenuItem className={classes.menuItem}>
@@ -62,8 +73,8 @@ function ListItemComposition(props) {
           <ListItemText classes={{ primary: classes.primary }} inset primary="Send Email" />
         </MenuItem>
       </MenuList>
-    <DatePicker value={date} onChange={setDate}/>
-      </div>
+    
+    </div>
   );
 }
 

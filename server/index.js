@@ -18,7 +18,6 @@ mongoose.connect(
     }
 );
 
-//לאפשר קריאות
 app.use(
     cors({
         origin: "*",
