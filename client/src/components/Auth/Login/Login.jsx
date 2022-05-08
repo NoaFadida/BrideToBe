@@ -27,7 +27,7 @@ const Login = () => {
       history.push("/");
       window.location.reload(false);
     } catch (error) {
-      alert(error.message);
+        alert(error.response.data);
     }
   };
 

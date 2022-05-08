@@ -1,10 +1,10 @@
 import React, { forwardRef } from "react";
 
-const Field = forwardRef(({ labelName, inputType }, ref) => {
+const Field = forwardRef(({ labelName, type }, ref) => {
   return (
     <div>
       <label>{labelName}</label>
-      <input type={inputType} ref={ref} />
+      <input type={type} ref={ref} />
     </div>
   );
 });

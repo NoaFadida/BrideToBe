@@ -11,7 +11,7 @@ import PersonIcon from '@material-ui/icons/Person';
 import NewMeetingIcon from '@material-ui/icons/AddAlarm';
 import CalendarToday from '@material-ui/icons/AccessAlarmsTwoTone';
 import './Menu.scss';
-import Select from "react-dropdown-select"
+import Select from "react-dropdown-select";
 import NewMeeting from '../../pages/NewMeeting';
 
 const styles = theme => ({
@@ -21,15 +21,13 @@ const styles = theme => ({
 function ListItemComposition(props) {
   const { classes } = props;
 
-  
- 
   const [pageIndex, setPageIndex] = useState(0);
 
   const handleChangeIndex = (index) => {
     setPageIndex(index);
   }
 
-  const options = ["My Details",<NewMeeting />, "Future Meetings","Meeting History","Send Email" ];
+  const options = [,"My Details",<NewMeeting />, "Future Meetings","Meeting History","Send Email" ];
     return (
       <div className='menu-container'>
       {options[pageIndex]}
@@ -41,7 +39,7 @@ function ListItemComposition(props) {
           <ListItemText classes={{ primary: classes.primary }} inset primary="My Details" />
         </MenuItem>
         
-        <MenuItem className={classes.menuItem} onClick={() => handleChangeIndex(1)}>
+        <MenuItem className={classes.menuItem} onClick={() => handleChangeIndex(2)}>
           <ListItemIcon className={classes.icon}>
             <NewMeetingIcon />
           </ListItemIcon>
@@ -80,7 +78,6 @@ function ListItemComposition(props) {
 
 ListItemComposition.propTypes = {
     classes: PropTypes.object.isRequired,
-
 };
 
 export default withStyles(styles)(ListItemComposition);
