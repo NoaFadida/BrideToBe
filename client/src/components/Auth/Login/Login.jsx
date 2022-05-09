@@ -1,8 +1,8 @@
 import React, { useRef } from "react";
-import "../Auth.scss";
 import axios from "axios";
 import Field from "../../common/Field";
 import { useHistory } from "react-router";
+import "../Auth.scss";
 
 const Login = () => {
   const history = useHistory();
@@ -37,7 +37,7 @@ const Login = () => {
       <div className="register-container-field-wrapper">
         <form onSubmit={handleSubmit} className="register-container-field">
           <Field ref={emailRef} labelName="Email" inputType="email" />
-          <Field ref={passwordRef} labelName="Password" inputType="password" />
+          <Field ref={passwordRef} labelName="Password" type="password" />
           <div>
             <button type="submit">SIGN IN</button>
           </div>
