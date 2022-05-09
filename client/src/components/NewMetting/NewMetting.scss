@@ -1,5 +1,6 @@
 .new-metting {
     display: flex;
+    width: 100%;
     align-items:center;
     // justify-content: center;
     flex-direction: column;
@@ -24,6 +25,11 @@
             border-radius: 8px;
         }
  
+    }
+    .calendar-data {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
     }
 }
 .react-calendar{
