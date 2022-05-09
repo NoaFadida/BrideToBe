@@ -2,9 +2,7 @@ import React, { useState, useEffect } from "react";
 import Calendar from 'react-calendar';
 import axios from "axios";
 import "./NewMetting.scss";
-import './Calander.css'
-
-
+import './Calander.css';
 const type = [
   { name:"Initial Consulting", time: 60 },
   { name:"Pick Up Dress", time: 30 },
@@ -45,7 +43,7 @@ const NewMeeting = () => {
         
       </select>
       <div className='calendar-data'>
-      <Calendar onChange={onChange} value={value} />
+        <Calendar onChange={onChange} value={value} />
       </div>
     </div>
   );
