@@ -1,17 +1,17 @@
 import React from "react";
 import { useState } from "react";
-import NewMeeting from "../NewMetting/NewMeeting";
+import NewMeeting from "../Meeting/NewMetting/NewMeeting";
 import "./Menu.scss";
 
 const ClientMenu = () => {
   const user = localStorage.getItem("user");
   const parseUser = JSON.parse(user);
-  const { username } = parseUser;
+  const { username, _id } = parseUser;
 
   const [pageIndex, setPageIndex] = useState(0);
   const options = [
     ,
-    <NewMeeting />,
+    <NewMeeting id={_id} />,
     "Future Meetings",
     "Meeting History",
   ];

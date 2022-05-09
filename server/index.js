@@ -7,6 +7,7 @@ const cors = require("cors");
 // Require Models
 const authRoutes = require("./routes/auth");
 const usersRoutes = require("./routes/users");
+const meetingsRoutes = require("./routes/meeting");
 
 dotenv.config();
 app.use(express.json());
@@ -29,6 +30,7 @@ app.use(
 
 app.use("/api/auth", authRoutes);
 app.use("/api/users", usersRoutes);
+app.use("/api/meetings", meetingsRoutes);
 
 const PORT = process.env.PORT || 5000;
 

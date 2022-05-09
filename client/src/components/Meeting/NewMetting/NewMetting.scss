@@ -1,0 +1,51 @@
+.new-metting {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    font-size: 20px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    letter-spacing: 2px;
+    width: 100%;
+    .user-input {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 20px;
+        & select {
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: rgb(214, 195, 190);
+            color: black;
+            border-radius: 8px;
+            cursor: pointer;
+            &:focus {
+                outline: none;
+            }
+            & option {
+                background-color: rgb(216, 212, 212);
+                color: black;
+                border-radius: 8px;
+            }
+        }
+    }
+    .create-meeting {
+        & button {
+            padding: 25px;
+            font-size: 20px;
+            border: none;
+            border-radius: 10px;
+            background-color: rgb(214, 195, 190);
+            cursor: pointer;
+            &:hover {
+                background-color: rgb(187, 161, 154);
+            }
+        }
+    }
+}
+
+.react-calendar {
+    background-color: rgb(216, 212, 212) !important;
+}
