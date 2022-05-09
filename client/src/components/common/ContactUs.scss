@@ -1,18 +1,18 @@
-.root {
-    position: fixed;
+.root  {
+    position: fixed !important;
     width: 60px;
     height: 60px;
-    bottom: 40px;
-    right: 40px;
-    background-color: #25d366;
+    bottom: 40px ;
+    right: 40px !important;
+    background-color: #25d366 !important;
     color: #FFF;
     border-radius: 50px;
-    text-align: center;
-    font-size: 30px;
-    box-shadow: 2px 2px 3px #999;
-    z-index: 100;
+    text-align: center ;
+    font-size: 30px !important;
+    box-shadow: 2px 2px 3px #999 !important ;
+    z-index: 100 !important;
     &:hover {
-      background-color: #075E54;
-      cursor: pointer;
+      background-color: #075E54 !important;
+      cursor: pointer !important;
     }
 }

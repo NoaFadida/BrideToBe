@@ -1,9 +1,7 @@
 import React from "react";
-import { IconButton } from "@material-ui/core"
-import { EmailOutlined } from "@material-ui/icons"
-import "./ContactUs.scss"
-
-
+import { IconButton } from "@material-ui/core";
+import { EmailOutlined } from "@material-ui/icons";
+import './ContactUs.scss';
 
 const ContactUs = () => {
 
