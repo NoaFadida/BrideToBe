@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import AllMeeting from "../Meeting/AllMeetings/AllMeeting";
 import "./Menu.scss";
 
 const AdminMenu = () => {
@@ -8,13 +9,13 @@ const AdminMenu = () => {
   const { username } = parseUser;
 
   const [pageIndex, setPageIndex] = useState(0);
-    const options = [
+  const options = [
     "Edit Profile",
     "Edit Future Meetings",
-    "View All Meetings" ,
+    <AllMeeting />,
     "Add Unaviable Dates",
     "Set Types Of Meetings",
-    "Statistical Information"
+    "Statistical Information",
   ];
 
   const changePageIndex = (index) => {
