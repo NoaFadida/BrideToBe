@@ -1,0 +1,35 @@
+.container-about{
+    background-color: black;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+    & img {
+        max-width: 470px;
+        opacity:0.5;
+        margin-top: 6%;
+        margin-bottom: 10%;
+    }
+    
+}
+
+.theme-light{
+    margin-right: 15%;
+    & p{
+        margin-top: 40px;
+        font-family: Lelo,sans-serif;
+        font-weight: 200;
+        max-width: 400px;
+        font-size: 16px;
+        letter-spacing: 2.5px;
+        line-height: 2.1;
+        color: hsla(0,0%,100%,.6); 
+        background-color: black;
+    }
+  
+}
