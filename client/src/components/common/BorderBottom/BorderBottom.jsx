@@ -2,7 +2,7 @@ import React from "react";
 import './BorderBottom.scss';
 import LocationIcon from "@material-ui/icons/LocationOn";
 import PhoneIcon from '@material-ui/icons/Phone';
-import Luce_B from '../../assets/LuceBride.png';
+import Luce_B from '../../../assets/LuceBride.png';
 
 const BorderBottom = () => {
   return (

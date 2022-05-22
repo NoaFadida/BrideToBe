@@ -12,10 +12,17 @@ const AllMeeting = () => {
 
   useEffect(() => {
     const fetchMeeting = async () => {
-      const allMeeting = await axios.get(
+      const {data} = await axios.get(
         `http://localhost:5000/api/meetings/${_id}`
       );
-      setMeetings(allMeeting.data);
+      const AllMeeting = data.sort(function (a, b) {
+        let editedA = a.Date.split('/')
+        editedA = `${editedA[1]}/${editedA[0]}/${editedA[2]}` 
+        let editedB = b.Date.split('/')
+        editedB = `${editedB[1]}/${editedB[0]}/${editedB[2]}` 
+        return new Date(editedB) - new Date(editedA);
+    });
+      setMeetings(AllMeeting);
     };
     fetchMeeting();
   }, []);
@@ -23,7 +30,9 @@ const AllMeeting = () => {
     <div className="all-meeting-container">
       {meetings.length > 0 &&
         meetings.map((meeting) => {
-          return <OneMeeting id={_id} meeting={meeting} key={meeting._id} />;
+          return (
+            <OneMeeting userId={_id} meeting={meeting} key={meeting._id} />
+          ) 
         })}
       {meetings.length === 0 && <h2>No Appointments were scheduled</h2>}
     </div>

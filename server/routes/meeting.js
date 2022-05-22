@@ -32,4 +32,13 @@ router.post("/create", async(req, res) => {
     res.status(200).json(savedMeeting);
 });
 
+router.delete("/:userId/:meetingId", async(req, res) => {
+    try {
+        const meeting = await Meeting.findOneAndRemove({ _id: req.params.meetingId });
+        res.send(meeting)
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
 module.exports = router;
