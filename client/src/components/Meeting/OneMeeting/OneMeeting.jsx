@@ -21,9 +21,9 @@ const OneMeeting = ({ meeting, userId, index }) => {
 
   const deleteMettingHandler = async  () => {
     const res = await axios.delete(
-      `http://localhost:5000/api/meetings/${userId}/${customerId}`
+      `http://localhost:5000/api/meetings/${customerId}`
     );
-    (res.status === 200) ? window.location.reload(false) : alert('the meeting cannot be removed!')
+    (!res.status === 200) && alert('the meeting cannot be removed!')
   }
 
   return (

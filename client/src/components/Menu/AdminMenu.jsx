@@ -1,7 +1,9 @@
 import React from "react";
 import { useState } from "react";
+import EditProfile from '../EditProfile/EditProfile';
 import AllMeeting from "../Meeting/AllMeetings/AllMeeting";
 import FutureMeeting from '../Meeting/FutureMeeting/FutureMeeting';
+import SetTime from '../Meeting/SetTime/SetTime';
 import "./Menu.scss";
 
 const AdminMenu = () => {
@@ -11,11 +13,11 @@ const AdminMenu = () => {
 
   const [pageIndex, setPageIndex] = useState(0);
   const options = [
-    "Edit Profile",
+    <EditProfile />,
     <FutureMeeting />,
     <AllMeeting />,
     "Add Unaviable Dates",
-    "Set Types Of Meetings",
+   <SetTime />,
     "Statistical Information",
   ];
 

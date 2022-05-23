@@ -3,7 +3,7 @@ import Calendar from "react-calendar";
 import axios from "axios";
 import "./NewMetting.scss";
 import "./Calander.css";
-import { meetingTime, meetingTypes } from "../consts";
+import { fittingTime, initalMeetingTime, pickupDressTime, meetingTypes } from "../consts";
 
 const NewMeeting = ({ id }) => {
   const [value, onChange] = useState(new Date());
@@ -11,6 +11,7 @@ const NewMeeting = ({ id }) => {
   const [designer, setDesigner] = useState("");
   const [type, setType] = useState("");
   const [time, setTime] = useState("");
+  const [meetingTime, setMeetingTime] = useState([])
 
   useEffect(() => {
     const getAdmins = async () => {
@@ -19,6 +20,21 @@ const NewMeeting = ({ id }) => {
     };
     getAdmins();
   }, []);
+
+  const onChangeHandler = (e) => {
+    e.preventDefault()
+    const eventType = e.target.value
+    if (eventType === 'Initial Consulting') {
+      setMeetingTime(initalMeetingTime)
+    }
+    else if (eventType === 'Fitting') {
+      setMeetingTime(fittingTime)
+    }
+    else if (eventType === 'Pick Up Dress') {
+      setMeetingTime(pickupDressTime)
+    }
+    setType(eventType)
+  }
 
   const createMeetingHandler = async (e) => {
     e.preventDefault();
@@ -69,7 +85,7 @@ const NewMeeting = ({ id }) => {
             return <option key={username}>{username.toUpperCase()}</option>;
           })}
         </select>
-        <select onChange={(e) => setType(e.target.value)}>
+        <select onChange={(e) => onChangeHandler(e)}>
           <option disabled selected>
             Meeting Type
           </option>

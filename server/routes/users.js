@@ -21,4 +21,16 @@ router.get("/", async(req, res) => {
         res.status(500).json(err);
     }
 });
+
+//UPDATE
+router.put("/admin/:adminId", async (req, res) => {
+    try {
+        let updateUser = await User.findByIdAndUpdate({ _id: req.params.adminId }, { $set: req.body });
+        updateUser.save();
+        updateUser = await User.findOne({ _id: req.params.adminId });
+        res.status(200).json(updateUser);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
 module.exports = router;

@@ -28,6 +28,18 @@ const UserSchema = new mongoose.Schema({
         type: Boolean,
         default: false,
     },
+    PickUpDress: {
+         type: String,
+         default: 60
+     },
+        Fitting: {
+            type: String,
+            default: 60
+        },
+        InitialMeeting: {
+            type: String,
+            default: 60
+        }
 }, { timestamps: true });
 
 module.exports = mongoose.model("User", UserSchema);
