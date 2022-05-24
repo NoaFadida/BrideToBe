@@ -1,35 +1,38 @@
 import "./AllMeeting.scss";
 import axios from "axios";
 import { useEffect } from "react";
-import { useState } from "react";
 import OneMeeting from "../OneMeeting/OneMeeting";
-import { useContext } from 'react';
-import { MeetingContext } from '../../../context/meetingContext';
+import { useSelector, useDispatch } from "react-redux";
+import { meetingActions } from "../../../store/index";
 
 const AllMeeting = () => {
-  const { setCurrentMeeting, currentMeeting } = useContext(MeetingContext)
-  const [meetings, setMeetings] = useState([]);
+  const dispatch = useDispatch();
+  const storeMeetings = useSelector((state) => state.meeting);
   const user = localStorage.getItem("user");
   const logedUser = JSON.parse(user);
   const { _id } = logedUser;
+  let meetings = storeMeetings;
 
   useEffect(() => {
     const fetchMeeting = async () => {
-      const {data} = await axios.get(
-        `http://localhost:5000/api/meetings/${_id}`
-      );
-      const AllMeeting = data.sort(function (a, b) {
-        let editedA = a.Date.split('/')
-        editedA = `${editedA[1]}/${editedA[0]}/${editedA[2]}` 
-        let editedB = b.Date.split('/')
-        editedB = `${editedB[1]}/${editedB[0]}/${editedB[2]}` 
+      if (meetings.length === 0) {
+        const { data } = await axios.get(
+          `http://localhost:5000/api/meetings/${_id}`
+        );
+        meetings = data;
+      }
+
+      const AllMeeting = meetings.sort(function (a, b) {
+        let editedA = a.Date.split("/");
+        editedA = `${editedA[1]}/${editedA[0]}/${editedA[2]}`;
+        let editedB = b.Date.split("/");
+        editedB = `${editedB[1]}/${editedB[0]}/${editedB[2]}`;
         return new Date(editedB) - new Date(editedA);
       });
-      setCurrentMeeting(AllMeeting)
-      setMeetings(AllMeeting);
+      dispatch(meetingActions.setMeeting(AllMeeting));
     };
     fetchMeeting();
-  }, []);
+  }, [meetings]);
 
   return (
     <div className="all-meeting-container">
@@ -37,7 +40,7 @@ const AllMeeting = () => {
         meetings.map((meeting) => {
           return (
             <OneMeeting userId={_id} meeting={meeting} key={meeting._id} />
-          ) 
+          );
         })}
       {meetings.length === 0 && <h2>No Appointments were scheduled</h2>}
     </div>

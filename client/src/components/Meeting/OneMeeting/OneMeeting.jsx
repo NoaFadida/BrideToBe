@@ -3,11 +3,16 @@ import "./OneMeeting.scss";
 import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react";
-import { AiOutlineDelete } from 'react-icons/ai';
+import { AiOutlineDelete } from "react-icons/ai";
+import { useSelector, useDispatch } from "react-redux";
+import { meetingActions } from "../../../store";
 
 const OneMeeting = ({ meeting, userId, index }) => {
-  const { Members, Time, Type, Date, _id: customerId } = meeting;
+  const { Members, Time, Type, Date, _id: meetingId } = meeting;
   const [customer, setCustomer] = useState({});
+  const dispatch = useDispatch();
+  const storeMeetings = useSelector((state) => state.meeting);
+
   useEffect(() => {
     const fetchCustomer = async () => {
       const customer = Members.find((member) => member !== userId);
@@ -19,12 +24,20 @@ const OneMeeting = ({ meeting, userId, index }) => {
     fetchCustomer();
   }, [userId, Members]);
 
-  const deleteMettingHandler = async  () => {
+  const deleteMeetingHandler = async () => {
     const res = await axios.delete(
-      `http://localhost:5000/api/meetings/${customerId}`
+      `http://localhost:5000/api/meetings/${meetingId}`
     );
-    (!res.status === 200) && alert('the meeting cannot be removed!')
-  }
+    if (res.status === 200) {
+      const filteredMeeting = storeMeetings.filter(
+        (meeting) => meeting._id !== meetingId
+      );
+      dispatch(meetingActions.setMeeting(filteredMeeting));
+    } else {
+      alert("the meeting cannot be removed!");
+      return;
+    }
+  };
 
   return (
     <div className="one-meeting-container">
@@ -32,7 +45,12 @@ const OneMeeting = ({ meeting, userId, index }) => {
       <h4>{customer.username}</h4>
       <h4>{Time}</h4>
       <h4>{Type}</h4>
-     {index && <AiOutlineDelete className='one-meeting-container-icon' onClick={deleteMettingHandler}/>}
+      {index && (
+        <AiOutlineDelete
+          className="one-meeting-container-icon"
+          onClick={deleteMeetingHandler}
+        />
+      )}
     </div>
   );
 };

@@ -5,11 +5,13 @@
     gap: 20px;
     padding: 10px 20px;
     border-radius: 10px;
+    margin: 0 20px;
     & h4 {
         flex: 1;
     }
     &:hover {
         background-color: rgb(230, 220, 220);
+        transform: scale(1.05);
     }
     &-icon {
         box-sizing: content-box;
