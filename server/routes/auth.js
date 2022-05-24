@@ -51,17 +51,18 @@ router.post("/login", async(req, res) => {
 //UPDATE
 router.post("/update/:userId", async(req, res) => {
     try {
-        // const userExist = await User.findOne({ email: req.body.email.toLowerCase() });
-        // if (userExist) {
-        //     res.status(404).send("User already exists")
-        //     return
-        // }
+        const userExist = await User.findOne({ email: req.body.email.toLowerCase() });
+        if (userExist) {
+            res.status(404).send("User already exists")
+            return
+        }
 
 
         //update user details
         let updateUser = await User.findByIdAndUpdate({ _id: req.params.userId }, { $set: req.body });
         updateUser.save();
         updateUser = await User.findOne({ _id: req.params.userId });
+        console.log(updateUser)
         res.status(200).json(updateUser);
     } catch (err) {
         res.status(500).json(err);

@@ -1,10 +1,13 @@
 .all-meeting-container {
     width: 100%;
-    border: 1px solid rgb(167, 144, 144);
-    padding: 10px;
-    border-radius: 10px;
-    background-color: rgb(238, 227, 227);
+    border: 1px solid rgb(136, 128, 128);
+    padding: 3px;
+    border-radius: 0px;
+    background-color: black;
+    color: rgb(205, 202, 202);
     & h2 {
         text-align: center;
+        font-size: 15px;
+        letter-spacing: 0.2pc;
     }
 }
