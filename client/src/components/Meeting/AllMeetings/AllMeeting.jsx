@@ -36,6 +36,12 @@ const AllMeeting = () => {
 
   return (
     <div className="all-meeting-container">
+      <div className="meeting-container-title">
+        <h4>Date</h4>
+        <h4>Name</h4>
+        <h4>Time</h4>
+        <h4>Type Of Meeting</h4>
+      </div>
       {meetings.length > 0 &&
         meetings.map((meeting) => {
           return (

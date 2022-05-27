@@ -3,8 +3,8 @@
     height: calc(100vh - 250px);
     overflow-y: scroll;
     width: 100%;
-    border: 0px solid ;
-    padding: 10 20px;
+    border: 2px solid rgb(233, 232, 232) ;
+    padding: 10px 20px;
     border-radius: 5px;
     color: darkgray;
     background: rgb(253, 253, 253);
@@ -38,4 +38,21 @@
 ::-webkit-scrollbar-thumb {
     background: darkgray;
     border-radius: 10px;
+}
+.meeting-container-title {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    & h4 {
+        flex: 1;
+        // font-size: 14px;
+        // font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: black;
+        font-family: "Philosopher", sans-serif;
+        letter-spacing: 0.2pc; 
+        font-size: 18px;
+    }
 }

@@ -46,6 +46,12 @@ const FutureMeeting = () => {
   }, [storeMeetings, _id]);
   return (
     <div className="all-meeting-container">
+      <div className="meeting-container-title">
+        <h4>Date</h4>
+        <h4>Name</h4>
+        <h4>Time</h4>
+        <h4>Type Of Meeting</h4>
+      </div>
       {futureMeetings.length > 0 &&
         futureMeetings.map((meeting) => {
           return (
