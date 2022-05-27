@@ -5,19 +5,22 @@
     gap: 20px;
     padding: 10px 20px;
     border-radius: 10px;
-    margin: 0 20px;
     & h4 {
         flex: 1;
+        font-size: 14px;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        letter-spacing: 0.1pc;
+       
     }
     &:hover {
-        background-color: rgb(230, 220, 220);
-        transform: scale(1.05);
+        color: rgb(238, 158, 172);
+        cursor: pointer;
     }
     &-icon {
         box-sizing: content-box;
         padding: 10px;
         &:hover {
-            background-color: rgb(204, 182, 182);
+            background-color: rgb(242, 242, 242);
             border-radius: 10px;
             transform: scale(1.3);
             cursor: pointer;

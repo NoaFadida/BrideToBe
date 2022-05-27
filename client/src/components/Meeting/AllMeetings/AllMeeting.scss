@@ -1,12 +1,15 @@
 .all-meeting-container {
     width: 100%;
     height: calc(100vh - 250px);
-    border: 1px solid rgb(167, 144, 144);
-    padding: 10px;
-    border-radius: 10px;
-    background-color: rgb(238, 227, 227);
     overflow-y: scroll;
+    width: 100%;
+    border: 0px solid ;
+    padding: 10 20px;
+    border-radius: 5px;
+    color: darkgray;
+    background: rgb(253, 253, 253);
     & h2 {
+        color: rgb(0, 0, 0);
         text-align: center;
         font-size: 15px;
         letter-spacing: 0.2pc;
@@ -17,22 +20,22 @@
 /* width */
 
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 6px;
 }
 
 
 /* Track */
 
 ::-webkit-scrollbar-track {
-    background: rgb(216, 197, 197);
-    border-radius: 10px;
-    border: 1px solid rgb(167, 144, 144);
+    background: rgb(242, 241, 241);
+    border-radius: 0px;
+    border: 0px solid ;
 }
 
 
 /* Handle */
 
 ::-webkit-scrollbar-thumb {
-    background: rgb(141, 98, 98);
+    background: darkgray;
     border-radius: 10px;
 }
