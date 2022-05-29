@@ -1,6 +1,8 @@
 import React from "react";
 import { useState } from "react";
 import NewMeeting from "../Meeting/NewMetting/NewMeeting";
+import UserFutureMeeting from "../UserMeeting/UserFutureMeeting";
+import MeetingsHistory from "../UserMeeting/MeetingsHistory";
 import "./Menu.scss";
 
 const ClientMenu = () => {
@@ -12,8 +14,8 @@ const ClientMenu = () => {
   const options = [
     ,
     <NewMeeting id={_id} />,
-    "Future Meetings",
-    "Meeting History",
+    <UserFutureMeeting />,
+    <MeetingsHistory />,
   ];
 
   const changePageIndex = (index) => {

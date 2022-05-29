@@ -3,38 +3,100 @@ import Calendar from "react-calendar";
 import axios from "axios";
 import "./NewMetting.scss";
 import "./Calander.css";
-import { fittingTime, initalMeetingTime, pickupDressTime, meetingTypes } from "../consts";
+import {
+  halfHourMeeting,
+  oneHourMeeting,
+  twoHourMeeting,
+  meetingTypes,
+} from "../consts";
 
 const NewMeeting = ({ id }) => {
   const [value, onChange] = useState(new Date());
   const [admins, setAdmins] = useState([]);
+  const [selectedAdmin, setSelectedAdmin] = useState({});
   const [designer, setDesigner] = useState("");
   const [type, setType] = useState("");
   const [time, setTime] = useState("");
-  const [meetingTime, setMeetingTime] = useState([])
+  const [meetingsTime, setMeetingsTime] = useState([]);
+  const [eventType, setEventType] = useState("");
+  const [filteredMeetingTime, setFilteredMeetingTime] = useState([]);
+
+  useEffect(() => {
+    const fetchMeeting = async () => {
+      const { data } = await axios.get(
+        `http://localhost:5000/api/meetings/${selectedAdmin._id}`
+      );
+      const filteredMeeting = data.map((meeting) => {
+        let editedDate = meeting.Date.split("/");
+        editedDate = `${editedDate[1]}/${editedDate[0]}/${editedDate[2]}`;
+        return { ...meeting, Date: editedDate };
+      });
+      const futureMeetings = filteredMeeting.filter(
+        (meeting) => new Date() - new Date(meeting.Date) < 0
+      );
+      const israelDatesFormat = futureMeetings.map((meeting) => {
+        let editedDate = meeting.Date.split("/");
+        editedDate = `${editedDate[1]}/${editedDate[0]}/${editedDate[2]}`;
+        return { ...meeting, Date: editedDate };
+      });
+      const formattedDate = formatDate(value);
+      const filteredFutureMeetings = israelDatesFormat.filter(
+        (meeting) => meeting.Date === formattedDate
+      );
+      const freeMeetingsTimes = [];
+      meetingsTime.map((time) => {
+        const foundMeeting = filteredFutureMeetings.find(
+          (futureMeeting) => futureMeeting.Time === time
+        );
+        if (!foundMeeting) freeMeetingsTimes.push(time);
+      });
+      setFilteredMeetingTime(freeMeetingsTimes);
+    };
+    fetchMeeting();
+  }, [selectedAdmin, value, meetingsTime]);
 
   useEffect(() => {
     const getAdmins = async () => {
-      const res = await axios.get("http://localhost:5000/api/users/admins");
-      setAdmins(res.data);
+      const { data: adminsData } = await axios.get(
+        "http://localhost:5000/api/users/admins"
+      );
+      setAdmins(adminsData);
     };
     getAdmins();
   }, []);
 
-  const onChangeHandler = (e) => {
-    e.preventDefault()
-    const eventType = e.target.value
-    if (eventType === 'Initial Consulting') {
-      setMeetingTime(initalMeetingTime)
-    }
-    else if (eventType === 'Fitting') {
-      setMeetingTime(fittingTime)
-    }
-    else if (eventType === 'Pick Up Dress') {
-      setMeetingTime(pickupDressTime)
-    }
-    setType(eventType)
-  }
+  useEffect(() => {
+    const onChangeHandler = () => {
+      const { Fitting, InitialMeeting, PickUpDress } = selectedAdmin || {};
+      if (eventType === "" || selectedAdmin === {}) return;
+      else if (eventType === "Initial Meeting") {
+        if (InitialMeeting === "30") setMeetingsTime(halfHourMeeting);
+        else if (InitialMeeting === "60") setMeetingsTime(oneHourMeeting);
+        else setMeetingsTime(twoHourMeeting);
+      } else if (eventType === "Fitting") {
+        if (Fitting === "30") setMeetingsTime(halfHourMeeting);
+        else if (Fitting === "60") setMeetingsTime(oneHourMeeting);
+        else setMeetingsTime(twoHourMeeting);
+      } else if (eventType === "Pick Up Dress") {
+        if (PickUpDress === "30") setMeetingsTime(halfHourMeeting);
+        else if (PickUpDress === "60") setMeetingsTime(oneHourMeeting);
+        else setMeetingsTime(twoHourMeeting);
+      }
+      setType(eventType);
+    };
+    onChangeHandler();
+  }, [selectedAdmin, eventType]);
+
+  useEffect(() => {
+    const getAdmin = async () => {
+      if (designer === "") return;
+      const { data } = await axios.get(
+        `http://localhost:5000/api/users/?username=${designer}`
+      );
+      setSelectedAdmin(data);
+    };
+    getAdmin();
+  }, [designer]);
 
   const createMeetingHandler = async (e) => {
     e.preventDefault();
@@ -85,7 +147,7 @@ const NewMeeting = ({ id }) => {
             return <option key={username}>{username.toUpperCase()}</option>;
           })}
         </select>
-        <select onChange={(e) => onChangeHandler(e)}>
+        <select onChange={(e) => setEventType(e.target.value)}>
           <option disabled selected>
             Meeting Type
           </option>
@@ -97,7 +159,7 @@ const NewMeeting = ({ id }) => {
           <option disabled selected>
             Meeting Time
           </option>
-          {meetingTime.map((item) => {
+          {filteredMeetingTime.map((item) => {
             return <option key={item}>{item}</option>;
           })}
         </select>

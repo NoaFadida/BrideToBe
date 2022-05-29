@@ -7,11 +7,12 @@ import { AiOutlineDelete } from "react-icons/ai";
 import { useSelector, useDispatch } from "react-redux";
 import { meetingActions } from "../../../store";
 
-const OneMeeting = ({ meeting, userId, index }) => {
+const OneMeeting = ({ meeting, userId, index, userIndex }) => {
   const { Members, Time, Type, Date, _id: meetingId } = meeting;
   const [customer, setCustomer] = useState({});
   const dispatch = useDispatch();
   const storeMeetings = useSelector((state) => state.meeting);
+  const storeUserMeeting = useSelector((state) => state.userMeetings);
 
   useEffect(() => {
     const fetchCustomer = async () => {
@@ -29,10 +30,17 @@ const OneMeeting = ({ meeting, userId, index }) => {
       `http://localhost:5000/api/meetings/${meetingId}`
     );
     if (res.status === 200) {
-      const filteredMeeting = storeMeetings.filter(
-        (meeting) => meeting._id !== meetingId
-      );
-      dispatch(meetingActions.setMeeting(filteredMeeting));
+      if (index) {
+        const filteredMeeting = storeMeetings.filter(
+          (meeting) => meeting._id !== meetingId
+        );
+        dispatch(meetingActions.setMeeting(filteredMeeting));
+      } else {
+        const filteredMeeting = storeUserMeeting.filter(
+          (meeting) => meeting._id !== meetingId
+        );
+        dispatch(meetingActions.setUserMeeting(filteredMeeting));
+      }
     } else {
       alert("the meeting cannot be removed!");
       return;
@@ -45,12 +53,13 @@ const OneMeeting = ({ meeting, userId, index }) => {
       <h4>{customer.username}</h4>
       <h4>{Time}</h4>
       <h4>{Type}</h4>
-      {index && (
-        <AiOutlineDelete
-          className="one-meeting-container-icon"
-          onClick={deleteMeetingHandler}
-        />
-      )}
+      {index ||
+        (userIndex && (
+          <AiOutlineDelete
+            className="one-meeting-container-icon"
+            onClick={deleteMeetingHandler}
+          />
+        ))}
     </div>
   );
 };

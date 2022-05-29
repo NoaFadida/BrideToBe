@@ -1,6 +1,6 @@
 import { createSlice, configureStore } from "@reduxjs/toolkit";
 
-const initialState = { meeting: [] };
+const initialState = { meeting: [], userMeetings: [] };
 
 const meetingSlice = createSlice({
     name: "MeetingSlice",
@@ -8,6 +8,9 @@ const meetingSlice = createSlice({
     reducers: {
         setMeeting(state, actions) {
             state.meeting = actions.payload;
+        },
+        setUserMeeting(state, actions) {
+            state.userMeetings = actions.payload;
         },
     },
 });

@@ -1,10 +1,10 @@
 export const meetingTypes = [
-    { name: "Initial Meeting"},
-    { name: "Pick Up Dress"},
-    { name: "Fitting"},
+    { name: "Initial Meeting" },
+    { name: "Pick Up Dress" },
+    { name: "Fitting" },
 ];
 
-export const fittingTime = [
+export const oneHourMeeting = [
     "09:00",
     "10:00",
     "11:00",
@@ -18,7 +18,7 @@ export const fittingTime = [
     "19:00",
 ];
 
-export const pickupDressTime = [
+export const halfHourMeeting = [
     "09:00",
     "09:30",
     "10:00",
@@ -32,7 +32,7 @@ export const pickupDressTime = [
     "14:00",
 ];
 
-export const initalMeetingTime = [
+export const twoHourMeeting = [
     "09:00",
     "11:00",
     "13:00",
@@ -41,8 +41,4 @@ export const initalMeetingTime = [
     "19:00",
 ];
 
-export const chooseTime = [
-    "30",
-    "60",
-    "120"
-]
+export const chooseTime = ["30", "60", "120"];

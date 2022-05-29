@@ -1,31 +1,33 @@
-.new-metting {
+.set-metting {
+    height: calc(100vh - 250px);
+    width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 50px;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 100px;
     font-size: 20px;
-    font-family: "Montserrat", sans-serif;
     font-weight: 700;
     letter-spacing: 2px;
-    width: 100%;
+    font-family: "Montserrat", sans-serif;
     .user-input {
         display: flex;
         align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        gap: 20px;
+        justify-content: space-around;
+        width: 50%;
         & select {
-            padding: 10px;
+            padding: 30px;
             margin-bottom: 10px;
-            background-color: rgb(214, 195, 190);
+            background-color: rgb(218, 198, 213);
             color: black;
             border-radius: 8px;
+            font-size: 20px;
             cursor: pointer;
             &:focus {
                 outline: none;
             }
             & option {
-                background-color: rgb(216, 212, 212);
+                background-color: rgb(218, 198, 213);
                 color: black;
                 border-radius: 8px;
             }
@@ -37,10 +39,10 @@
             font-size: 20px;
             border: none;
             border-radius: 10px;
-            background-color: rgb(214, 195, 190);
+            background-color: rgb(190, 158, 182);
             cursor: pointer;
             &:hover {
-                background-color: rgb(187, 161, 154);
+                background-color: rgb(155, 115, 145);
             }
         }
     }

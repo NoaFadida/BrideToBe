@@ -8,12 +8,14 @@
     & h4 {
         flex: 1;
         font-size: 14px;
-        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        letter-spacing: 0.1pc; 
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        letter-spacing: 0.1pc;
     }
     &:hover {
-        color: rgb(238, 158, 172);
+        color: rgb(172, 89, 103);
+        background-color: rgb(233, 217, 219);
         cursor: pointer;
+        transform: scale(1.02);
     }
     &-icon {
         box-sizing: content-box;
