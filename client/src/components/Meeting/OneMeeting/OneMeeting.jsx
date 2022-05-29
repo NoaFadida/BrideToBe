@@ -53,13 +53,12 @@ const OneMeeting = ({ meeting, userId, index, userIndex }) => {
       <h4>{customer.username}</h4>
       <h4>{Time}</h4>
       <h4>{Type}</h4>
-      {index ||
-        (userIndex && (
-          <AiOutlineDelete
-            className="one-meeting-container-icon"
-            onClick={deleteMeetingHandler}
-          />
-        ))}
+      {(index || userIndex) && (
+        <AiOutlineDelete
+          className="one-meeting-container-icon"
+          onClick={deleteMeetingHandler}
+        />
+      )}
     </div>
   );
 };
