@@ -35,7 +35,7 @@ const AdminMenu = () => {
           <li onClick={() => changePageIndex(0)}>Edit Profile</li>
           <li onClick={() => changePageIndex(1)}>Edit Future Meetings</li>
           <li onClick={() => changePageIndex(2)}>View All Meetings</li>
-          <li onClick={() => changePageIndex(3)}>Add Unaviable Dates</li>
+          <li onClick={() => changePageIndex(3)}>Add Unavailable Dates</li>
           <li onClick={() => changePageIndex(4)}>Set Types Of Meetings</li>
           <li onClick={() => changePageIndex(5)}>Statistical Information</li>
         </ul>

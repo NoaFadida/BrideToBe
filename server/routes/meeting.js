@@ -2,6 +2,12 @@ const router = require("express").Router();
 const Meeting = require("../models/Meeting");
 const Unavailble = require("../models/Unavailble");
 
+
+router.get("/all-meetings", async (req, res) => {
+    const allMeeting = await Meeting.find();
+    return res.send(allMeeting);
+});
+
 router.get("/:userId", async(req, res) => {
     try {
         const meetings = await Meeting.find({
@@ -57,5 +63,6 @@ router.get("/unavailble/:adminId", async(req, res) => {
     const daysOff = await Unavailble.find({ Id: req.params.adminId });
     return res.send(daysOff);
 });
+
 
 module.exports = router;

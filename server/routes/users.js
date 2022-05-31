@@ -33,4 +33,10 @@ router.put("/admin/:adminId", async (req, res) => {
         res.status(500).json(err);
     }
 });
+
+
+router.get("/all-users", async(req, res) => {
+    const allUsers = await User.find();
+    return res.send(allUsers);
+});
 module.exports = router;
