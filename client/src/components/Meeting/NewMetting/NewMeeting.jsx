@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Calendar from "react-calendar";
 import axios from "axios";
 import "./NewMetting.scss";
-import "./Calander.css";
+import "./Calander.scss";
 import {
   halfHourMeeting,
   oneHourMeeting,
@@ -50,7 +50,27 @@ const NewMeeting = ({ id }) => {
         );
         if (!foundMeeting) freeMeetingsTimes.push(time);
       });
-      setFilteredMeetingTime(freeMeetingsTimes);
+      const { data: daydOffData } = await axios.get(`http://localhost:5000/api/meetings/unavailble/${selectedAdmin._id}`);
+      const filteredDaydOffData = []
+      daydOffData.map((day) => {
+        const { StartingTime, EndingTime, Date } = day;
+        const editedStartingTime = StartingTime.split(':').join('')
+        const editedEndingTime = EndingTime.split(':').join('')
+        filteredDaydOffData.push({startingTime: editedStartingTime,endingTime: editedEndingTime, date: Date })
+      })
+      let finalDaysFree = freeMeetingsTimes
+      filteredDaydOffData.map((day => {
+        const { startingTime, endingTime } = day;
+        if (formattedDate === day.date) {
+          console.log(formattedDate, day.date)
+          const finalHours = freeMeetingsTimes.filter((hour) => { 
+            const editedHour = hour.split(':').join('')
+            return (editedHour < startingTime) || (editedHour > endingTime)
+          } )
+          finalDaysFree = finalHours
+        }
+      }))
+      setFilteredMeetingTime(finalDaysFree);
     };
     fetchMeeting();
   }, [selectedAdmin, value, meetingsTime]);
@@ -163,12 +183,12 @@ const NewMeeting = ({ id }) => {
             return <option key={item}>{item}</option>;
           })}
         </select>
+        <div className="create-meeting">
+        <button type="submit">Add Meeting</button>
+      </div>
       </div>
       <div className="calendar-data">
         <Calendar onChange={onChange} value={value} calendarType="US" />
-      </div>
-      <div className="create-meeting">
-        <button type="submit">Create Meeting</button>
       </div>
     </form>
   );

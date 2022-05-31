@@ -22,9 +22,12 @@ const SetTime = () => {
       body
     );
     localStorage.setItem("user", JSON.stringify(data));
+    alert("Saved!")
   };
 
   return (
+    <div className="set-time-container">
+    <h2>Update Time</h2>
     <form onSubmit={submitHandler} className="set-metting">
       <div className="user-input">
         <select onChange={(e) => setType(e.target.value)}>
@@ -45,9 +48,10 @@ const SetTime = () => {
         </select>
       </div>
       <div className="create-meeting">
-        <button type="submit">Update Meeting</button>
+        <button type="submit">UPDATE</button>
       </div>
-    </form>
+      </form>
+      </div>
   );
 };
 

@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const Meeting = require("../models/Meeting");
+const Unavailble = require("../models/Unavailble");
 
 router.get("/:userId", async(req, res) => {
     try {
@@ -39,6 +40,22 @@ router.delete("/:meetingId", async(req, res) => {
     } catch (err) {
         res.status(500).json(err);
     }
+});
+
+router.post("/add-unavailble", async (req, res) => {
+    const addUnavailbleDates = new Unavailble({
+        Id: req.body.id,
+        StartingTime: req.body.startingTime,
+        EndingTime: req.body.endingTime,
+        Date: req.body.date,
+    });
+    const savedUnavailble = await addUnavailbleDates.save();
+    res.status(200).json(savedUnavailble);
+});
+
+router.get("/unavailble/:adminId", async(req, res) => {
+    const daysOff = await Unavailble.find({ Id: req.params.adminId });
+    return res.send(daysOff);
 });
 
 module.exports = router;

@@ -13,17 +13,20 @@ const EditProfile = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (usernameRef.current.value < 3) {
+    if (usernameRef.current.value.length < 3) {
       setErrorMessage("Please enter valid username.");
+      return;
     }
     var pattern = new RegExp(
       /^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i
     );
     if (!pattern.test(emailRef.current.value)) {
       setErrorMessage("Please enter valid email address.");
+      return;
     }
-    if (phoneRef.current.value < 9) {
+    if (phoneRef.current.value.length < 9) {
       setErrorMessage("Please enter valid phone number.");
+      return;
     }
 
     const usernameUpper = usernameRef.current.value.toUpperCase();
@@ -40,6 +43,7 @@ const EditProfile = () => {
         updatedUser
       );
       localStorage.setItem("user", JSON.stringify(res.data));
+      alert("Saved!")
       window.location.reload(false);
     } catch (error) {
       alert(error.response.data);
@@ -50,9 +54,9 @@ const EditProfile = () => {
       <h2>My Profile</h2>
       <div className="edit-container-field-wrapper">
         <form onSubmit={handleSubmit} className="edit-container-field">
-          <Field ref={usernameRef} labelName="UserName" type="text" />
-          <Field ref={emailRef} labelName="Email" type="email" />
-          <Field ref={phoneRef} labelName="Phone" type="number" />
+          <Field ref={usernameRef} labelName="UserName" type="text" defaultValue={parseUser.username} />
+          <Field ref={emailRef} labelName="Email" type="email" defaultValue={parseUser.email}/>
+          <Field ref={phoneRef} labelName="Phone" type="number" defaultValue={parseUser.phone}/>
           {errorMessage && <div className="error"> {errorMessage} </div>}
           <div>
             <button type="submit">SAVE</button>

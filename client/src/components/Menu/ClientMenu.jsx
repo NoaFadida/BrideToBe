@@ -12,7 +12,6 @@ const ClientMenu = () => {
 
   const [pageIndex, setPageIndex] = useState(0);
   const options = [
-    ,
     <NewMeeting id={_id} />,
     <UserFutureMeeting />,
     <MeetingsHistory />,
@@ -27,9 +26,9 @@ const ClientMenu = () => {
       <div className="user-menu-nav">
         <ul>
           <li>Hello {username} !</li>
-          <li onClick={() => changePageIndex(1)}>New Meeting</li>
-          <li onClick={() => changePageIndex(2)}>Future Meeting</li>
-          <li onClick={() => changePageIndex(3)}>Meeting History</li>
+          <li onClick={() => changePageIndex(0)}>New Meeting</li>
+          <li onClick={() => changePageIndex(1)}>Future Meeting</li>
+          <li onClick={() => changePageIndex(2)}>Meeting History</li>
         </ul>
       </div>
       <div className="user-menu-data">{options[pageIndex]}</div>

@@ -51,8 +51,10 @@ router.post("/login", async(req, res) => {
 //UPDATE
 router.post("/update/:userId", async(req, res) => {
     try {
+        let currentUser = await User.findById({ _id: req.params.userId });
         const userExist = await User.findOne({ email: req.body.email.toLowerCase() });
-        if (userExist) {
+
+        if (userExist && req.body.email.toLowerCase() != currentUser.email) {
             res.status(404).send("User already exists")
             return
         }

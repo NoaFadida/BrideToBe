@@ -4,6 +4,8 @@ import EditProfile from '../EditProfile/EditProfile';
 import AllMeeting from "../Meeting/AllMeetings/AllMeeting";
 import FutureMeeting from '../Meeting/FutureMeeting/FutureMeeting';
 import SetTime from '../Meeting/SetTime/SetTime';
+import UnaviableDates from '../UnavailableDates/UnavailableDates';
+import StatisticsPage from "../Statistics/StatisticsPage";
 import "./Menu.scss";
 
 const AdminMenu = () => {
@@ -16,9 +18,9 @@ const AdminMenu = () => {
     <EditProfile />,
     <FutureMeeting />,
     <AllMeeting />,
-    "Add Unaviable Dates",
-   <SetTime />,
-    "Statistical Information",
+    <UnaviableDates />,
+    <SetTime />,
+    <StatisticsPage />,
   ];
 
   const changePageIndex = (index) => {

@@ -12,15 +12,16 @@
             list-style: none;
             font-family: "Montserrat", sans-serif;
             li {
-                letter-spacing: 3px;
-                font-size: 22px;
+                letter-spacing: 6px;
+                font-size: 24px;
                 font-weight: 700;
                 font-family: "Playfair Display", sans-serif;
                 padding: 10px;
                 margin-bottom: 10px;
                 width: fit-content;
                 border-radius: 10px;
-                color: #4a4036b0;
+                color:#f88c9e; ;
+                font-family: 'Philosopher',sans-serif;;
                 &:not(:first-child) {
                     letter-spacing: 1.5px;
                     font-size: 16px;

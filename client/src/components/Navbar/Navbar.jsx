@@ -19,9 +19,6 @@ const Navbar = () => {
   return (
     <div className="navbar-container">
       <div className="navbar-details">
-        <div className="navbar-input">
-          <input type="text" placeholder="search for dress..." />
-        </div>
         <h2>Bride To Be</h2>
       </div>
       <div className="navbar-button">

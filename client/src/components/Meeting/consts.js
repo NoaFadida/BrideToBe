@@ -41,4 +41,6 @@ export const twoHourMeeting = [
     "19:00",
 ];
 
+export const allHourMeeting = [];
+
 export const chooseTime = ["30", "60", "120"];

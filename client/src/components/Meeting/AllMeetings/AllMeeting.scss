@@ -37,7 +37,7 @@
 
 ::-webkit-scrollbar-thumb {
     background: darkgray;
-    border-radius: 10px;
+    border-radius: px;
 }
 .meeting-container-title {
     display: flex;
@@ -48,11 +48,10 @@
     border-radius: 10px;
     & h4 {
         flex: 1;
-        // font-size: 14px;
-        // font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        color: black;
-        font-family: "Philosopher", sans-serif;
+        color: #f88c9e;
+        font-family: 'Philosopher', sans-serif;
         letter-spacing: 0.2pc; 
         font-size: 18px;
+        font-weight: 600;
     }
 }
