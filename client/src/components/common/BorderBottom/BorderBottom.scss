@@ -6,25 +6,10 @@
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-
-    .img-wrapper-home {
-        // size: 10%;
-        background-color: black;
-        width: 40%;
-        height: 60%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        & img {
-            margin-bottom: 20px;
-            opacity:0.8;
-            width: 100% ;
-        }
-    }
 }
 
 .container {
+    width: 100vw;;
     background-color: #f7f6f6;
     width: 100vw;
     display: flex;

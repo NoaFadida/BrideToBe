@@ -1,6 +1,7 @@
 import React from "react";
 import "./HomeMessage.scss";
 import RouterLink from "../common/RouterLink";
+import New_B from '../../assets/Next-Collection.png';
 
 const HomeMessage = () => {
   const user = localStorage.getItem("user");
@@ -20,6 +21,11 @@ const HomeMessage = () => {
           <RouterLink name="Click here to register" url="/register" />
         </div>
       )}
+      <div className='container-home'>
+          <div className="img-wrapper-home">
+              <img src={New_B}/>
+          </div>
+      </div>
     </div>
   );
 };

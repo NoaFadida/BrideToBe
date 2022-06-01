@@ -24,10 +24,10 @@
         .register-container-field {
             width: 25%;
             & div {
-                margin-bottom: 20px;
+                margin-bottom: 30px;
                 display: flex;
                 align-items: center;
-                justify-content: space-between;
+                justify-content: center;
                 & label {
                     flex: 1.5;
                 }
@@ -46,7 +46,7 @@
                     }
                 }
                 & button {
-                    width: 50%;
+                    width: 30%;
                     border: none;
                     border-radius: 7px;
                     background-color:black;

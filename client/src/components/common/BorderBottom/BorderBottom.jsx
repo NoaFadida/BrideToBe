@@ -7,11 +7,6 @@ import Luce_B from '../../../assets/LuceBride.png';
 const BorderBottom = () => {
   return (
     <>
-    <div className='container-home'>
-          <div className="img-wrapper-home">
-              <img src={Luce_B}/>
-          </div>
-    </div>
     <div className='body'>
       <div className='text-line'>
         <LocationIcon className='Icon'/>
@@ -22,8 +17,6 @@ const BorderBottom = () => {
         <PhoneIcon className='Icon'/>
         +972-9994699
       </div>
-     
-      
     </div>
     </>
 

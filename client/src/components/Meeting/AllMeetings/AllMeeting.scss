@@ -1,13 +1,13 @@
 .all-meeting-container {
-    width: 100%;
+    width: 100vw;
     height: calc(100vh - 250px);
     overflow-y: scroll;
-    width: 100%;
     border: 2px solid rgb(233, 232, 232) ;
     padding: 10px 20px;
     border-radius: 5px;
     color: darkgray;
     background: rgb(253, 253, 253);
+
     & h2 {
         color: rgb(0, 0, 0);
         text-align: center;
@@ -15,30 +15,16 @@
         letter-spacing: 0.2pc;
     }
 }
-
-
-/* width */
-
 ::-webkit-scrollbar {
-    width: 6px;
+    width: 4px;
 }
-
-
-/* Track */
-
-::-webkit-scrollbar-track {
-    background: rgb(242, 241, 241);
-    border-radius: 0px;
-    border: 0px solid ;
-}
-
-
-/* Handle */
 
 ::-webkit-scrollbar-thumb {
     background: darkgray;
-    border-radius: px;
 }
+
+
+
 .meeting-container-title {
     display: flex;
     align-items: center;
